@@ -23,7 +23,7 @@ print "Se seleccionara solo el primer canal"
 
 s1 = snd[:,1]/2.**15
 
-plt.plot(snd[:,0]/2.**15)
+# plt.plot(snd[:,0]/2.**15)
 snd = snd[:,0]/2.**15
 
 # SI SE QUIERE ESCUCHAR, REVISAR pyaudio, pyalsaaudio
@@ -59,9 +59,13 @@ if n % 2 > 0: # we've got odd number of points fft
 else:
     p[1:len(p) -1] = p[1:len(p) - 1] * 2 # we've got even number of points fft
 
-freqArray = arange(0, nUniquePts, 1.0) * (sampFreq / n);
+freqArray = arange(0, nUniquePts, 1.0) * ( n / sampFreq );
 # plt.plot(freqArray/1000, 10*log10(p), color='k')
-plt.plot(freqArray/1000, (p), color='k')
+
+# plt.plot(freqArray/1000, p, color='k')
+print (sampFreq/n)
+print freqArray[0:100]
+plt.plot(freqArray/1000.0, p)
 
 # xlabel('Frequency (kHz)')
 # ylabel('Power (dB)')

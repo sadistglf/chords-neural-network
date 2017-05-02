@@ -35,6 +35,8 @@ psdx = (1/(Fs*N))*np.square(np.abs(xdft))
 psdx[1:-1] = 2*psdx[1:-1]
 freq = arange(0,Fs/2,Fs/N)
 print len(freq)
+
+#Comentario de plot: En el grafico sin log10 se observa claramente un peak asociado a la frecuencia de la senhal. 
 plt.plot(freq,psdx)
 #plt.plot(freq,np.log10(psdx))
 plt.show()
